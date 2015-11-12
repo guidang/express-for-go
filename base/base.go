@@ -75,7 +75,7 @@ func (t *Base) checkSignature() bool {
 }
 
 func (t *Base) ResponseMsg() {
-	fmt.Fprintf(t.Resp, t.parseTextRequest())
+	fmt.Fprintf(t.Resp, string(t.parseTextRequest()))
 }
 
 /* 接收的数据 xml 格式 */
