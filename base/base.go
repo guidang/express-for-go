@@ -75,9 +75,10 @@ func (t *Base) checkSignature() bool {
 }
 
 func (t *Base) ResponseMsg() {
-	t.parseTextRequest()
+	fmt.Fprintf(t.Resp, t.parseTextRequest())
 }
 
+/* 接收的数据 xml 格式 */
 func (t *Base) parseTextRequest() *TextRequestBody {
 	body, err := ioutil.ReadAll(t.Req.Body)
 	if err != nil {
